@@ -1,6 +1,6 @@
 # Sections
 
-An assembly program can be divided into **three sections**; [text](https://github.com/jgphilpott/asmtut#text), [data](https://github.com/jgphilpott/asmtut#data) and [bss](https://github.com/jgphilpott/asmtut#bss).
+An assembly program can be divided into **three sections**; [text](https://github.com/jgphilpott/asmtut/tree/master/sections#text), [data](https://github.com/jgphilpott/asmtut/tree/master/sections#data) and [bss](https://github.com/jgphilpott/asmtut/tree/master/sections#bss).
 
 ## text
 
