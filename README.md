@@ -16,11 +16,14 @@ In this tutorial we are using a [Raspberry Pi](https://www.raspberrypi.org/) wit
  - [Compile](https://github.com/jgphilpott/asmtut#compile)
  - [Execute](https://github.com/jgphilpott/asmtut#execute)
  - [Comments](https://github.com/jgphilpott/asmtut#comments)
+   - [Singleline](https://github.com/jgphilpott/asmtut#singleline)
+   - [Multiline](https://github.com/jgphilpott/asmtut#multiline)
  - [Sections](https://github.com/jgphilpott/asmtut#sections)
    - [text](https://github.com/jgphilpott/asmtut#text)
    - [data](https://github.com/jgphilpott/asmtut#data)
    - [bss](https://github.com/jgphilpott/asmtut#bss)
  - [More Info](https://github.com/jgphilpott/asmtut#more-info)
+   - [Derek Banas - Assembly Language Tutorial](https://github.com/jgphilpott/asmtut#derek-banas---assembly-language-tutorial)
 
 ## Create
 
@@ -38,9 +41,13 @@ Finally we can run our executable by typing **`./myfile`** in the terminal.
 
 ## Comments
 
+### Singleline
+
 Creating comments in assembly code is simple, just use the `@` symbol.
 
 `@ This is a comment.`
+
+### Multiline
 
 For multiline comments the syntax is slightly different, use `/*` and `*/` instead.
 
