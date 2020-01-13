@@ -15,15 +15,15 @@ In this tutorial we are using a [Raspberry Pi](https://www.raspberrypi.org/) wit
  - [Create](https://github.com/jgphilpott/asmtut#create)
  - [Compile](https://github.com/jgphilpott/asmtut#compile)
  - [Execute](https://github.com/jgphilpott/asmtut#execute)
- - [Comments](https://github.com/jgphilpott/asmtut#comments)
-   - [Singleline](https://github.com/jgphilpott/asmtut#singleline)
-   - [Multiline](https://github.com/jgphilpott/asmtut#multiline)
- - [Sections](https://github.com/jgphilpott/asmtut#sections)
-   - [text](https://github.com/jgphilpott/asmtut#text)
-   - [data](https://github.com/jgphilpott/asmtut#data)
-   - [bss](https://github.com/jgphilpott/asmtut#bss)
- - [More Info](https://github.com/jgphilpott/asmtut#more-info)
-   - [Derek Banas - Assembly Language Tutorial](https://github.com/jgphilpott/asmtut#derek-banas---assembly-language-tutorial)
+ - [Comments](https://github.com/jgphilpott/asmtut/tree/master/comments#comments)
+   - [Singleline](https://github.com/jgphilpott/asmtut/tree/master/comments#singleline)
+   - [Multiline](https://github.com/jgphilpott/asmtut/tree/master/comments#multiline)
+ - [Sections](https://github.com/jgphilpott/asmtut/tree/master/sections#sections)
+   - [text](https://github.com/jgphilpott/asmtut/tree/master/sections#text)
+   - [data](https://github.com/jgphilpott/asmtut/tree/master/sections#data)
+   - [bss](https://github.com/jgphilpott/asmtut/tree/master/sections#bss)
+ - [More Info](https://github.com/jgphilpott/asmtut/tree/master/more_info#more-info)
+   - [Derek Banas - Assembly Language Tutorial](https://github.com/jgphilpott/asmtut/tree/master/more_info#derek-banas---assembly-language-tutorial)
 
 ## Create
 
@@ -38,61 +38,3 @@ If all that worked fine we can now make our object file executable. To do this t
 ## Execute
 
 Finally we can run our executable by typing **`./myfile`** in the terminal.
-
-## Comments
-
-### Singleline
-
-Creating comments in assembly code is simple, just use the `@` symbol.
-
-`@ This is a comment.`
-
-### Multiline
-
-For multiline comments the syntax is slightly different, use `/*` and `*/` instead.
-
-```
-/*
-This is not merely a comment..
-it's a multiline comment!
-*/
-```
-
-## Sections
-
-An assembly program can be divided into **three sections**; [text](https://github.com/jgphilpott/asmtut#text), [data](https://github.com/jgphilpott/asmtut#data) and [bss](https://github.com/jgphilpott/asmtut#bss).
-
-### text
-
-The text section is used for keeping the actual code and begins with the declaration `.text`. This section must also include a `.global _start` and `_start:` declaration which tells the kernel where the program execution begins, see below.
-
-```
-.text
-.global _start
-_start:
-```
-
-### data
-
-The data section is used for declaring initialized data or constants. This data does not change at runtime, see below.
-
-```
-.data
-```
-
-### bss
-
-The bss section is used for declaring variables, see below.
-
-```
-.bss
-```
-
-## More Info
-
-### [Derek Banas](https://www.youtube.com/channel/UCwRXb5dUK4cvsHbx-rGzSgw) - [Assembly Language Tutorial](https://www.youtube.com/playlist?list=PLGLfVvz_LVvQu9IwUcpn8KOZsOvoHx8sU)
-
- - [Assembly Language Tutorial (Part 1)](https://www.youtube.com/watch?v=ViNnfoE56V8&list=PLGLfVvz_LVvQu9IwUcpn8KOZsOvoHx8sU&index=1)
- - [Assembly Language Tutorial (Part 2)](https://www.youtube.com/watch?v=5HILZon7pVE&list=PLGLfVvz_LVvQu9IwUcpn8KOZsOvoHx8sU&index=2)
- - [Assembly Language Tutorial (Part 3)](https://www.youtube.com/watch?v=2ghL_R5CSaI&list=PLGLfVvz_LVvQu9IwUcpn8KOZsOvoHx8sU&index=3)
- - [Assembly Language Tutorial (Part 4)](https://www.youtube.com/watch?v=zj-cGdNpYZ8&list=PLGLfVvz_LVvQu9IwUcpn8KOZsOvoHx8sU&index=4)
