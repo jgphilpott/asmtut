@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="150" height="150" src="https://i.pinimg.com/originals/00/94/18/009418460183d05cbbff41179436b3eb.gif">
+</p>
+
 # Asmtut
 
 Assembly language is a low-level programming language just one layer above the binary that runs your hardware. It can be produced by compiling a high-level language such as C/C++ or written from scratch.
