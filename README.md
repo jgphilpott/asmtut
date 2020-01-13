@@ -17,3 +17,12 @@ Before we can execute any of the code that's in our source file we need to compi
 If all that worked fine we can now make our object file executable. To do this type **`ld -o myfile myfile.o`** in your terminal. The `ld -o` indicates that you want to make an executable from an object file and you must provide the name of the executable (no extension necessary) and the name of the object file with the `.o` extension. Now if you type `ls` in your terminal you should see `myfile.s`, `myfile.o` and `myfile`.
 
 Finally we can run our executable by typing **`./myfile`** in the terminal.
+
+## More Info
+
+### [Derek Banas](https://www.youtube.com/channel/UCwRXb5dUK4cvsHbx-rGzSgw) - [Assembly Language Tutorial](https://www.youtube.com/playlist?list=PLGLfVvz_LVvQu9IwUcpn8KOZsOvoHx8sU)
+
+ - [Assembly Language Tutorial (Part 1)](https://www.youtube.com/watch?v=ViNnfoE56V8&list=PLGLfVvz_LVvQu9IwUcpn8KOZsOvoHx8sU&index=1)
+ - [Assembly Language Tutorial (Part 2)](https://www.youtube.com/watch?v=5HILZon7pVE&list=PLGLfVvz_LVvQu9IwUcpn8KOZsOvoHx8sU&index=2)
+ - [Assembly Language Tutorial (Part 3)](https://www.youtube.com/watch?v=2ghL_R5CSaI&list=PLGLfVvz_LVvQu9IwUcpn8KOZsOvoHx8sU&index=3)
+ - [Assembly Language Tutorial (Part 4)](https://www.youtube.com/watch?v=zj-cGdNpYZ8&list=PLGLfVvz_LVvQu9IwUcpn8KOZsOvoHx8sU&index=4)
