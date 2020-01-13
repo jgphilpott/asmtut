@@ -17,9 +17,9 @@ In this tutorial we are using a [Raspberry Pi](https://www.raspberrypi.org/) wit
  - [Execute](https://github.com/jgphilpott/asmtut#execute)
  - [Comments](https://github.com/jgphilpott/asmtut#comments)
  - [Sections](https://github.com/jgphilpott/asmtut#sections)
-   - text
-   - data
-   - bss
+   - [text](https://github.com/jgphilpott/asmtut#text)
+   - [data](https://github.com/jgphilpott/asmtut#data)
+   - [bss](https://github.com/jgphilpott/asmtut#bss)
  - [More Info](https://github.com/jgphilpott/asmtut#more-info)
 
 ## Create
@@ -53,7 +53,7 @@ it's a multiline comment!
 
 ## Sections
 
-An assembly program can be divided into **three sections**; text, data and bss.
+An assembly program can be divided into **three sections**; [text](https://github.com/jgphilpott/asmtut#text), [data](https://github.com/jgphilpott/asmtut#data) and [bss](https://github.com/jgphilpott/asmtut#bss).
 
 ### text
 
