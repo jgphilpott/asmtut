@@ -4,9 +4,9 @@
 
 # Asmtut
 
-Assembly language is a low-level programming language just one layer above the binary that runs your hardware. It can be produced by compiling a high-level language such as C/C++ or written from scratch.
+[Assembly language](https://en.wikipedia.org/wiki/Assembly_language) is a low-level programming language just one layer above the binary that runs your hardware. It can be produced by compiling a high-level language such as [C](https://en.wikipedia.org/wiki/C_(programming_language))/[C++](https://en.wikipedia.org/wiki/C%2B%2B) or written from scratch.
 
-In this tutorial we are using Raspberry Pi with an ARM microprocessor and will write a little bit of assembly from scratch.
+In this tutorial we are using a [Raspberry Pi](https://www.raspberrypi.org/) with a [ARM microprocessor](https://en.wikipedia.org/wiki/ARM_architecture) and will write a little bit of assembly code from scratch. You dont need to use a Raspberry Pi but you will need a ARM microprocessor.
 
 ## Create, Compile and Execute
 
