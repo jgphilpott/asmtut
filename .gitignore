@@ -1,0 +1,6 @@
+*
+!*.s
+!*.md
+!LICENSE
+!Makefile
+!.gitignore
