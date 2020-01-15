@@ -6,30 +6,44 @@
 
 [Assembly language](https://en.wikipedia.org/wiki/Assembly_language) is a low-level programming language just one layer above the binary that runs your hardware. It can be produced by compiling a high-level language such as [C](https://en.wikipedia.org/wiki/C_(programming_language))/[C++](https://en.wikipedia.org/wiki/C%2B%2B) or written from scratch. In this tutorial we are using a [Raspberry Pi](https://www.raspberrypi.org/) with a [ARM microprocessor](https://en.wikipedia.org/wiki/ARM_architecture) and will write a little bit of assembly code from scratch. You dont need to use a Raspberry Pi but **you will need a ARM microprocessor**.
 
-It's true that assembly language is somewhat obsolete but knowing at least the basics does has some benefits. It's like looking under the hood of a language, it removes a lot of the mystery around how high-level languages work and brings you closer to the hardware. It’s also a good character building exercise that gives you a greater appreciation for the pain that other developers have gone through before you!
+It's true that assembly language is somewhat obsolete but knowing at least the basics does has some benefits. It's like looking under the hood of a language, it removes a lot of the mystery around how high-level languages work and brings you closer to the hardware. It’s also a great character building exercise that gives you a greater appreciation for the pain that other developers have gone through before you!
 
-I think every senior developer should write at least a simple ‘Hello World!’ application in assembly. If you haven't made that rite of passage yet but are interested then your in the right place! That's exactly what this tutorial is going to show you how to do.
+I think every senior developer should write at least a simple 'Hello World!' application in assembly. If you haven't made that rite of passage yet but are interested then your in the right place! That's exactly what this tutorial is going to teach.
 
 # Content
 
  - [Intro](https://github.com/jgphilpott/asmtut#intro)
  - [Content](https://github.com/jgphilpott/asmtut#content)
- - [Create](https://github.com/jgphilpott/asmtut#create)
- - [Compile](https://github.com/jgphilpott/asmtut#compile)
- - [Execute](https://github.com/jgphilpott/asmtut#execute)
- - [Comments](https://github.com/jgphilpott/asmtut/tree/master/comments#comments)
-   - [Singleline](https://github.com/jgphilpott/asmtut/tree/master/comments#singleline)
-   - [Multiline](https://github.com/jgphilpott/asmtut/tree/master/comments#multiline)
- - [Sections](https://github.com/jgphilpott/asmtut/tree/master/sections#sections)
-   - [text](https://github.com/jgphilpott/asmtut/tree/master/sections#text)
-   - [data](https://github.com/jgphilpott/asmtut/tree/master/sections#data)
-   - [bss](https://github.com/jgphilpott/asmtut/tree/master/sections#bss)
- - [More Info](https://github.com/jgphilpott/asmtut/tree/master/more_info#more-info)
-   - [Derek Banas - Assembly Language Tutorial](https://github.com/jgphilpott/asmtut/tree/master/more_info#derek-banas---assembly-language-tutorial)
+ - [Getting Started](https://github.com/jgphilpott/asmtut#getting-started)
+   - [Instructions]()
+   - [Registers]()
+   - [System Calls]()
 
-# Create
+# Getting Started
 
 The first thing you should do is create a source file for your code. To do this simply create a file with the `.s` extension. Try typing **`touch myfile.s`** in your terminal. That should generate a file with the given name that you can now open in your preferred text editor.
+
+The first thing to know is that assembly programs are divided into sections. There are **three possible sections** but let's start with the main one which is called 'text'. The text section is used for keeping the actual code and begins with the declaration `.text`. This section must also include a `.global _start` and `_start:` declaration which tells the kernel where the program execution begins, see below. If you want to know more about sections look [here](https://github.com/jgphilpott/asmtut/tree/master/sections#sections).
+
+```
+.text
+.global _start
+_start:
+```
+
+This program won't execute yet because the `_start:` block cant be empty. To make this program execute we need to know about instructions, registers and system calls.
+
+## Instructions
+
+Instructions are short keywords with predefined behavior, the most common one in `MOV` which is used for moving data into registers. To see a list of common instructions take a look here.
+
+## Registers
+
+A register is a quickly accessible location available to a computer's central processing unit. Most ARM microprocessors come with 16 registers (0-15) each capable of holding a [word of data](https://en.wikipedia.org/wiki/Word_(computer_architecture)). Some of the registers have special purposes such as `R7` which holds the system call number. To see a full list take a look here.
+
+## System Calls
+
+...
 
 # Compile
 
