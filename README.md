@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="150" height="150" src="https://i.pinimg.com/originals/00/94/18/009418460183d05cbbff41179436b3eb.gif">
+  <img width="150" height="150" src="https://github.com/jgphilpott/asmtut/blob/master/media/icon.gif">
 </p>
 
 # Asmtut
