@@ -6,7 +6,7 @@
 
 [Assembly language](https://en.wikipedia.org/wiki/Assembly_language) is a low-level programming language just one layer above the binary that runs your hardware. It can be produced by compiling a high-level language such as [C](https://en.wikipedia.org/wiki/C_(programming_language))/[C++](https://en.wikipedia.org/wiki/C%2B%2B) or written from scratch. In this tutorial we are using a [Raspberry Pi](https://www.raspberrypi.org/) with a [ARM microprocessor](https://en.wikipedia.org/wiki/ARM_architecture) and will write a little bit of assembly code from scratch. You dont need to use a Raspberry Pi but **you will need a ARM microprocessor**.
 
-It's true that assembly language is somewhat obsolete but knowing at least the basics does has some benefits. It's like looking under the hood of a language, it removes a lot of the mystery around how high-level languages work and brings you closer to the hardware. It’s also a great character building exercise that gives you a greater appreciation for the pain that other developers have gone through before you!
+It's true that assembly language is somewhat obsolete but knowing at least the basics does have some benefits. It removes a lot of the mystery around how high-level languages work and brings you closer to the hardware. It’s also a good character building exercise that gives you a greater appreciation for the pain that other developers have gone through before you!
 
 I think every senior developer should write at least a simple 'Hello World!' application in assembly. If you haven't made that rite of passage yet but are interested then your in the right place! That's exactly what this tutorial is going to teach.
 
@@ -18,6 +18,9 @@ I think every senior developer should write at least a simple 'Hello World!' app
    - [Instructions]()
    - [Registers]()
    - [System Calls]()
+ - [Step One]()
+ - [Step Two]()
+ - [Step Three]()
 
 # Getting Started
 
@@ -31,17 +34,21 @@ The first thing to know is that assembly programs are divided into sections. The
 _start:
 ```
 
-This program won't execute yet because the `_start:` block cant be empty. To make this program execute we need to know about instructions, registers and system calls.
+Were off to a good start but this program won't execute yet because the `_start:` block cant be empty. To make this program execute we first need to know a little bit about [instructions](https://github.com/jgphilpott/asmtut#instructions), [registers](https://github.com/jgphilpott/asmtut#registers) and [system calls](https://github.com/jgphilpott/asmtut#system-calls).
 
 ## Instructions
 
-Instructions are short keywords with predefined behavior, the most common one in `MOV` which is used for moving data into registers. To see a list of common instructions take a look here.
+Instructions are short **keywords with predefined behavior**, the most common one is `MOV` which is used for moving data into registers. To see a short list of common instructions take a look [here](https://github.com/jgphilpott/asmtut/tree/master/instructions#instructions).
 
 ## Registers
 
-A register is a quickly accessible location available to a computer's central processing unit. Most ARM microprocessors come with 16 registers (0-15) each capable of holding a [word of data](https://en.wikipedia.org/wiki/Word_(computer_architecture)). Some of the registers have special purposes such as `R7` which holds the system call number. To see a full list take a look here.
+A register is a quickly accessible location available to a computer's central processing unit. Most ARM microprocessors come with **16 registers** (0-15) each capable of holding a [word of data](https://en.wikipedia.org/wiki/Word_(computer_architecture)). Some of the registers have special purposes such as `R7` which holds the system call number. To see a full list take a look [here](https://github.com/jgphilpott/asmtut/tree/master/registers#registers).
 
 ## System Calls
+
+System calls are APIs for the interface between the user space and the kernel space. There are **six main system calls for the [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel)**. For a list of the call numbers and their associated actions take a look [here](https://github.com/jgphilpott/asmtut/tree/master/system#system-calls).
+
+# Step One
 
 ...
 
