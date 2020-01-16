@@ -6,7 +6,7 @@
 
 [Assembly language](https://en.wikipedia.org/wiki/Assembly_language) is a low-level programming language just one layer above the binary that runs your hardware. It can be produced by compiling a high-level language such as [C](https://en.wikipedia.org/wiki/C_(programming_language))/[C++](https://en.wikipedia.org/wiki/C%2B%2B) or written from scratch. In this tutorial we are using a [Raspberry Pi](https://www.raspberrypi.org/) with a [ARM microprocessor](https://en.wikipedia.org/wiki/ARM_architecture) and will write a little bit of assembly code from scratch. You dont need to use a Raspberry Pi but **you will need a ARM microprocessor**.
 
-It's true that assembly language is somewhat obsolete but knowing at least the basics does have some benefits. It removes a lot of the mystery around how high-level languages work and brings you closer to the hardware. It’s also a good character building exercise that gives you a greater appreciation for the pain that other developers have gone through before you!
+It's true that assembly language is somewhat obsolete but knowing at least the basics does have some benefits. It removes a lot of the mystery around how high-level languages work and brings you closer to the [physical layer](https://en.wikipedia.org/wiki/Physical_layer). It’s also a good character building exercise that gives you a greater appreciation for the pain that other developers have gone through before you!
 
 I think every senior developer should write at least a simple 'Hello World!' application in assembly. If you haven't made that rite of passage yet but are interested then your in the right place! That's exactly what this tutorial is going to teach.
 
@@ -23,6 +23,7 @@ I think every senior developer should write at least a simple 'Hello World!' app
    - [Execute]()
  - [Step Two]()
  - [Step Three]()
+ - [Conclusion]()
 
 # Getting Started
 
@@ -78,11 +79,11 @@ Finally we can run our executable by typing **`./myfile`** in the terminal, if y
 
 # Step Two
 
-Now it's time to generate some output. Do do this let's start by making our first instruction to set the value of `R7` (the system call) to `#4`. This indicates that we want to ‘write’.
+Now it's time to generate some output. Do do this let's start by making our first instruction to set the value of `R7` (the system call) to `#4`. This indicates that we want to 'write'.
 
-Next let's load (`LDR`) our message into register one (`R1`) and make it equal to the variable name ‘hello’. Unfortunately it's not sufficient to merely load our message we must also declare the length of this message. So to do that lets set the value of `R2` to `#13` and end this block of code using the software interrupt.
+Next let's load (`LDR`) our message into register one (`R1`) and make it equal to the variable name 'hello'. Unfortunately it's not sufficient to merely load our message we must also declare the length of this message. So to do that let's set the value of `R2` to `#13` and end this block of code using the software interrupt.
 
-Not done quite yet, we also need to exit the program (just like we did in step one) and define the value of ‘hello’ in our data section. At the bottom of the file add the `.data` section and set the value of ‘hello’ to the ASCII string `“Hello World!\n”`. The final product should look similar to the code below.
+Not done quite yet, we also need to exit the program (just like we did in step one) and define the value of 'hello' in our data section. At the bottom of the file add the `.data` section and set the value of 'hello' to the ASCII string `"Hello World!\n"`. The final product should look similar to the code below.
 
 ```
 .text
@@ -101,6 +102,14 @@ _start:
  hello: .ascii "Hello World!\n"
 ```
 
+Now that we've made changes to the source file were going to need to [recompile](https://github.com/jgphilpott/asmtut#compile) before we [execute](https://github.com/jgphilpott/asmtut#execute) if we want to see the changes take effect. If you see "Hello World!" printed in the terminal the program execution was a success!
+
+**Note:** If you want to add [comments](https://github.com/jgphilpott/asmtut/tree/master/comments#comments) to the code at any point you can do that using the `@` symbol.
+
 # Step Three
+
+...
+
+# Conclusion
 
 ...
