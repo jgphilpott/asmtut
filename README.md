@@ -108,8 +108,32 @@ Now that we've made changes to the source file were going to need to [recompile]
 
 # Step Three
 
-...
+The circle of life would not be complete if all we could do was output, so let's take a brief look at how input works. Just like in the output scenario we begin by setting the system call number. This time we want `R7` to be set to `#3` indicating that we want to read.
+
+Next we will load the variable name 'message' into `R1`. Again we must also define a length in `R2`, in this case it's a maximum length, the program should still execute if the input is less than the defined length (let's use 10).
+
+To exit the program use the system call `#1` just like in steps [one](https://github.com/jgphilpott/asmtut#step-one) and [two](https://github.com/jgphilpott/asmtut#step-two). In the `.data` section the variable name 'message' can be set to a blank space as default. Your input code should look something like this:
+
+```
+.text
+.global _start
+_start:
+
+  MOV R7, #3
+  LDR R1, =message
+  MOV R2, #10
+  SWI 0
+
+  MOV R7, #1
+  SWI 0
+  
+.data
+message: .ascii " "
+```
+
+Once you [recompile](https://github.com/jgphilpott/asmtut#compile) and [execute](https://github.com/jgphilpott/asmtut#execute) the terminal should hang giving you the opportunity to input some text. Type something less than 10 characters long and hit enter. If you don't get an error everything worked!
+
 
 # Conclusion
 
-...
+There is a lot more to know about assembly but that's as far as were going to go for now. If you want to dive deeper take a look at a few of [these links](https://github.com/jgphilpott/asmtut/tree/master/extra#more-info).
