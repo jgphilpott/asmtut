@@ -3,7 +3,7 @@
 _start:
 
   MOV R7, #4
-  LDR R1, =hello
+  LDR R1, =output
   MOV R2, #13
   SWI 0
 
@@ -11,4 +11,4 @@ _start:
   SWI 0
   
 .data
-hello: .ascii "Hello World!\n"
+output: .ascii "Hello World!\n"

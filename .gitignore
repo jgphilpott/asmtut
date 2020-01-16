@@ -1,2 +1,3 @@
-*/asmtut.o
-*/asmtut
+*.o
+*/input
+*/output
