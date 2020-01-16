@@ -78,7 +78,28 @@ Finally we can run our executable by typing **`./myfile`** in the terminal, if y
 
 # Step Two
 
-...
+Now it's time to generate some output. Do do this let's start by making our first instruction to set the value of `R7` (the system call) to `#4`. This indicates that we want to ‘write’.
+
+Next let's load (`LDR`) our message into register one (`R1`) and make it equal to the variable name ‘hello’. Unfortunately it's not sufficient to merely load our message we must also declare the length of this message. So to do that lets set the value of `R2` to `#13` and end this block of code using the software interrupt.
+
+Not done quite yet, we also need to exit the program (just like we did in step one) and define the value of ‘hello’ in our data section. At the bottom of the file add the `.data` section and set the value of ‘hello’ to the ASCII string `“Hello World!\n”`. The final product should look similar to the code below.
+
+```
+.text
+.global _start
+_start:
+
+  MOV R7, #4
+  LDR R1, =hello
+  MOV R2, #13
+  SWI 0
+
+  MOV R7, #1
+  SWI 0
+
+ .data
+ hello: .ascii "Hello World!\n"
+```
 
 # Step Three
 
