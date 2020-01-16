@@ -19,6 +19,8 @@ I think every senior developer should write at least a simple 'Hello World!' app
    - [Registers]()
    - [System Calls]()
  - [Step One]()
+   - [Compile]()
+   - [Execute]()
  - [Step Two]()
  - [Step Three]()
 
@@ -26,7 +28,7 @@ I think every senior developer should write at least a simple 'Hello World!' app
 
 The first thing you should do is create a source file for your code. To do this simply create a file with the `.s` extension. Try typing **`touch myfile.s`** in your terminal. That should generate a file with the given name that you can now open in your preferred text editor.
 
-The first thing to know is that assembly programs are divided into sections. There are **three possible sections** but let's start with the main one which is called 'text'. The text section is used for keeping the actual code and begins with the declaration `.text`. This section must also include a `.global _start` and `_start:` declaration which tells the kernel where the program execution begins, see below. If you want to know more about sections look [here](https://github.com/jgphilpott/asmtut/tree/master/sections#sections).
+The first thing to know is that assembly programs are divided into sections. There are **three possible sections** but let's start with the main one which is called 'text'. The text section is used for keeping the actual code and begins with the declaration `.text`. This section must also include a `.global _start` and `_start:` declaration which tells the kernel where the program execution begins, see below. If you want to know more about sections take a look [here](https://github.com/jgphilpott/asmtut/tree/master/sections#sections).
 
 ```
 .text
@@ -34,7 +36,7 @@ The first thing to know is that assembly programs are divided into sections. The
 _start:
 ```
 
-Were off to a good start but this program won't execute yet because the `_start:` block cant be empty. To make this program execute we first need to know a little bit about [instructions](https://github.com/jgphilpott/asmtut#instructions), [registers](https://github.com/jgphilpott/asmtut#registers) and [system calls](https://github.com/jgphilpott/asmtut#system-calls).
+Were off to a good start but this code won't execute yet because the `_start:` block cant be empty. To make this code execute we first need to know a little bit about [instructions](https://github.com/jgphilpott/asmtut#instructions), [registers](https://github.com/jgphilpott/asmtut#registers) and [system calls](https://github.com/jgphilpott/asmtut#system-calls).
 
 ## Instructions
 
@@ -50,14 +52,34 @@ System calls are APIs for the interface between the user space and the kernel sp
 
 # Step One
 
-...
+To get things rolling lets begin with a program that just starts and then exits immediately. To do this were going to add two lines of code. The first line is going to be an instruction to move (`MOV`) the value `#1` into register seven (`R7`). As mentioned above `R7` is a register with a special purpose, it holds the system call number. So by setting the value of `R7` to `#1` we are telling the kernel that the action we want to perform is 'exit'.
 
-# Compile
+The next line of code is a software interrupt (`SWI`) which causes the program to exit because the system call is set to `#1`. Because these two lines of code are part of the `_start:` block they need to be indented two spaces. Your code should now look something like this:
 
-Before we can execute any of the code that's in our source file we need to compile it to an object file and make it executable. Try typing **`as -o myfile.o myfile.s`** in your terminal. The `as -o` indicates that you want to compile a source file to an object file and you must provide the name of the object file with the `.o` extension and the name of the source file with the `.s` extension. Now if you type `ls` in your terminal you should see `myfile.s` and `myfile.o`.
+```
+.text
+.global _start
+_start:
+  MOV R7, #1
+  SWI 0
+```
+
+## Compile
+
+This code is now valid and will execute but before we can do that we need to compile it to an object file and make it executable. Try typing **`as -o myfile.o myfile.s`** in your terminal. The `as -o` indicates that you want to compile a source file to an object file and you must provide the name of the object file with the `.o` extension and the name of the source file with the `.s` extension. Now if you type `ls` in your terminal you should see `myfile.s` and `myfile.o`.
 
 If all that worked fine we can now make our object file executable. To do this type **`ld -o myfile myfile.o`** in your terminal. The `ld -o` indicates that you want to make an executable from an object file and you must provide the name of the executable (no extension necessary) and the name of the object file with the `.o` extension. Now if you type `ls` in your terminal you should see `myfile.s`, `myfile.o` and `myfile`.
 
-# Execute
+If you want, you can create a [Makefile](https://opensource.com/article/18/8/what-how-makefile) to help simplify the compiling process but I won't go into detail about that now.
 
-Finally we can run our executable by typing **`./myfile`** in the terminal.
+## Execute
+
+Finally we can run our executable by typing **`./myfile`** in the terminal, if you don't see any error message then everything worked!
+
+# Step Two
+
+...
+
+# Step Three
+
+...
