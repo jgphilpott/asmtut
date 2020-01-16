@@ -98,8 +98,8 @@ _start:
   MOV R7, #1
   SWI 0
 
- .data
- hello: .ascii "Hello World!\n"
+.data
+hello: .ascii "Hello World!\n"
 ```
 
 Now that we've made changes to the source file were going to need to [recompile](https://github.com/jgphilpott/asmtut#compile) before we [execute](https://github.com/jgphilpott/asmtut#execute) if we want to see the changes take effect. If you see "Hello World!" printed in the terminal the program execution was a success!
@@ -126,7 +126,7 @@ _start:
 
   MOV R7, #1
   SWI 0
-  
+
 .data
 message: .ascii " "
 ```
