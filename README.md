@@ -108,7 +108,7 @@ Now that we've made changes to the source file were going to need to [recompile]
 
 # Step Three
 
-The circle of life would not be complete if all we could do was output, so let's take a brief look at how input works. Just like in the output scenario we begin by setting the system call number. This time we want `R7` to be set to `#3` indicating that we want to read.
+The circle of life would not be complete if all we could do was output, so let's take a brief look at how input works. Just like in the output scenario we begin by setting the system call number. This time we want `R7` to be set to `#3` indicating that we want to 'read'.
 
 Next we will load the variable name 'message' into `R1`. Again we must also define a length in `R2`, in this case it's a maximum length, the program should still execute if the input is less than the defined length (let's use 10).
 
